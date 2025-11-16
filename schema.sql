@@ -20,7 +20,6 @@ CREATE TABLE ingredients (
     ingredient_name VARCHAR(150) NOT NULL UNIQUE
 );
 
-
 CREATE TABLE recipe_ingredient (
     recipe_id INT NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
     ingredient_id INT NOT NULL REFERENCES ingredients(id) ON DELETE CASCADE,
@@ -28,7 +27,6 @@ CREATE TABLE recipe_ingredient (
     unit VARCHAR(30),
     PRIMARY KEY (recipe_id, ingredient_id)
 );
-
 
 CREATE TABLE steps (
     id SERIAL PRIMARY KEY,
